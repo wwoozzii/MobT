@@ -1,0 +1,33 @@
+/* bace for mobile */
+body {
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	background-size: 100%;
+  	/* background-image: url(/photo/pink.jpg); */
+  	background-repeat: repeat;
+  	background-attachment: fixed;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.container {
+	display: grid;
+  	grid-template-columns: repeat(6, 1fr);
+  	grid-auto-rows: 100px;
+  	grid-column-gap: 13px;
+  	grid-row-gap: 12.5px;
+}
+.test {
+grid-column: 1 / 7; /*колонка */
+  grid-row: 1 / 3; /*ряд */
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 12px;
+  color: white;
+  /* background-color: green; */
+}
