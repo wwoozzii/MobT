@@ -1,4 +1,9 @@
 /* bace for mobile */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
 	font-size: 16px;
 	line-height: 1.5;
@@ -16,7 +21,7 @@ a {
 .container {
 	display: grid;
   	grid-template-columns: repeat(4, 1fr);
-  	grid-auto-rows: 150px;
+  	grid-auto-rows: 130px;
   	grid-column-gap: 7px;
   	grid-row-gap: 7px;
 }
@@ -35,7 +40,7 @@ a {
     background-repeat: no-repeat;
 	
 
-	border-radius:5px ;
+	/* border-radius:5px ; */
 
 	color: white;
 
@@ -46,16 +51,16 @@ a {
     position: absolute;
 	left: 50%; 
     transform: translateX(-50%);
-	/* top: 65px; */
-	top: 105px;
-    width: 80px;
-    height: 80px;
+
+	top: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%; 
 
     background-image: url(photo/36ka.jpg);
     background-size: cover;
     background-position: center;
-    border: 3px solid rgb(29, 29, 29); 
+    border: 3.5px solid rgb(29, 29, 29); 
     z-index: 10; 
 }
 
