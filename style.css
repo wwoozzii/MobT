@@ -73,19 +73,19 @@ a {
 }
 .burgerMenu {
 	background-color: white;
-	width: 5px;
-	height: 5px;
+	width: 4.5px;
+    height: 4.5px;
 	border-radius: 50%;
 	position: absolute;
     right: 20px;
-    top: 20px;     
+    top: 30px;     
   
 }
 .burgerMenu::before {
     content: '';
     background-color: white;
-    width: 5px;
-    height: 5px;
+    width: 4.5px;
+    height: 4.5px;
     border-radius: 50%;
     position: absolute;
     right: 0;
@@ -95,8 +95,8 @@ a {
 .burgerMenu::after {
     content: '';
     background-color: white;
-    width: 5px;
-    height: 5px;
+    width: 4.5px;
+    height: 4.5px;
     border-radius: 50%;
     position: absolute;
     right: 0;
