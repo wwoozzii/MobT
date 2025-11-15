@@ -27,7 +27,7 @@ a {
 	background:
 	linear-gradient(
             rgba(0, 0, 0, 0.0), 
-            rgba(0, 0, 0, 0.636)
+            rgba(0, 0, 0, 0.0)
         ),
         url(photo/gtr34.jpg); 
  	background-size: cover;    
@@ -64,3 +64,4 @@ a {
 
 
 } */
+
