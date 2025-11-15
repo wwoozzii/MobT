@@ -29,7 +29,7 @@ a {
             rgba(0, 0, 0, 0.158), 
             rgba(0, 0, 0, 0.521)
         ),
-        url(photo/gtr34.jpg); 
+        url(photo/ocean.jpg); 
  	background-size: cover;    
     background-position: center;
     background-repeat: no-repeat;
@@ -46,23 +46,19 @@ a {
     position: absolute;
 	left: 50%; 
     transform: translateX(-50%);
-	top: 65px;
+	/* top: 65px; */
+	top: 105px;
     width: 80px;
     height: 80px;
     border-radius: 50%; 
-    background-image: url();
+
+    background-image: url(photo/36ka.jpg);
     background-size: cover;
     background-position: center;
     border: 3px solid rgb(29, 29, 29); 
     z-index: 10; 
 }
-/* .heads .avatars {
-	grid-column: 1 / 5;
-	grid-row: 1 / 2;
 
-	background-color: brown;
-
-} */
 
 
 
