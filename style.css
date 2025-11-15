@@ -26,8 +26,8 @@ a {
 
 	background:
 	linear-gradient(
-            rgba(0, 0, 0, 0.0), 
-            rgba(0, 0, 0, 0.0)
+            rgba(0, 0, 0, 0.158), 
+            rgba(0, 0, 0, 0.521)
         ),
         url(photo/gtr34.jpg); 
  	background-size: cover;    
@@ -38,8 +38,31 @@ a {
 	border-radius:5px ;
 
 	color: white;
+
+	 position: relative;
 }
 
+.avatars {
+    position: absolute;
+	left: 50%; 
+    transform: translateX(-50%);
+	top: 65px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; 
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+    border: 3px solid rgb(29, 29, 29); 
+    z-index: 10; 
+}
+/* .heads .avatars {
+	grid-column: 1 / 5;
+	grid-row: 1 / 2;
+
+	background-color: brown;
+
+} */
 
 
 
@@ -62,6 +85,4 @@ a {
   	border-radius: 12px;
   	color: white;
 
-
 } */
-
