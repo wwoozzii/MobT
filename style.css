@@ -118,8 +118,8 @@ a {
     top: 8px;
 }
 .dropMenu {
-	width: 100px;
-	height: 150px;
+	width: 115px;
+	height: 170px;
 	top: 20px;
 	right: 3px;
 	background-color: rgb(27, 27, 27);
@@ -133,8 +133,8 @@ a {
 	display: block;
 }
 .dropMenu a {
-	padding-left: 6px;
-	font-size: 15px;
+	padding-left: 10px;
+	font-size: 16px;
 }
 
 
