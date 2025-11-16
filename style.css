@@ -107,7 +107,6 @@ a {
     right: 0;
     top: -8px;
 }
-
 .burgerMenu::after {
     content: '';
     background-color: white;
@@ -118,7 +117,25 @@ a {
     right: 0;
     top: 8px;
 }
-
+.dropMenu {
+	width: 100px;
+	height: 150px;
+	top: 20px;
+	right: 3px;
+	background-color: rgb(27, 27, 27);
+	position: absolute;
+	border: 1px solid rgba(255, 255, 255, 0.055);
+	border-radius: 5px;
+	z-index: 100;
+	display: none;
+}
+.dropMenu.active {
+	display: block;
+}
+.dropMenu a {
+	padding-left: 6px;
+	font-size: 15px;
+}
 
 
 
