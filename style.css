@@ -82,7 +82,7 @@ a {
     background-image: url(photo/36ka.jpg);
     background-size: cover;
     background-position: center;
-    border: 3px solid rgb(29, 29, 29); 
+    border: 2px solid rgb(29, 29, 29); 
     z-index: 10; 
 }
 
