@@ -15,3 +15,20 @@ document.addEventListener('click', function (event) {
 		dropMenu.classList.remove('active');
 	}
 })
+
+
+
+
+const copyProfile = document.querySelector('.copyProfile')
+const editBtn = document.querySelector('.editBtn')
+
+editBtn.addEventListener("click", toggleProfile)
+
+function toggleProfile() {
+	copyProfile.classList.toggle("active")
+}
+document.addEventListener('click', function (event) {
+	if (!editBtn.contains(event.target)) {
+		copyProfile.classList.remove('active');
+	}
+})
