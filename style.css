@@ -185,10 +185,12 @@ a {
 	transform: translateY(-20px);
 	visibility: hidden;
 	transition: 
-    	opacity 0.3s ease,
+    	/* opacity 0.3s ease,
         transform 0.3s ease,
         visibility 0.3s ease;
-	
+	 */
+	 opacity 0.1s ease-out,
+        transform 0.14s cubic-bezier(0.4, 0, 0.6, 1);
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 
@@ -248,9 +250,12 @@ a {
 	transform: translateY(50px);
 	visibility: hidden;
 	transition: 
-    	opacity 0.5s ease,
+    	/* opacity 0.5s ease,
         transform 0.4s ease,
-        visibility 0.4s ease;
+        visibility 0.4s ease; */
+		opacity 0.12s ease-out,
+        transform 0.18s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* visibility можно убрать - он следует за opacity */
 	/* border-radius: 12px 12px 0 0; */
 }
 .copyProfile.active {
