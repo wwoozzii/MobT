@@ -27,8 +27,19 @@ editBtn.addEventListener("click", toggleProfile)
 function toggleProfile() {
 	copyProfile.classList.toggle("active")
 }
+
+
+
+
+
+
+
+
+const closeBtn = document.querySelector('.close-btn');
+
 document.addEventListener('click', function (event) {
-	if (!editBtn.contains(event.target)) {
+
+	if (event.target.closest('.close-btn')) {
 		copyProfile.classList.remove('active');
 	}
 })

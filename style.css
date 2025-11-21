@@ -185,12 +185,13 @@ a {
 	transform: translateY(-20px);
 	visibility: hidden;
 	transition: 
-    	/* opacity 0.3s ease,
-        transform 0.3s ease,
-        visibility 0.3s ease;
-	 */
-	 opacity 0.1s ease-out,
-        transform 0.14s cubic-bezier(0.4, 0, 0.6, 1);
+    
+
+	 /* opacity 0.1s ease-out,
+        transform 0.14s cubic-bezier(0.4, 0, 0.6, 1); */
+        opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
 
@@ -363,12 +364,18 @@ a {
 }
 .editorTextPanel {
 	color: rgb(255, 255, 255);
-}
+	margin-left: 16px;
 
+}
+.editorTextPanel h3 {
+	margin-top: 12px;
+}
 .editHead,
 .editAvatar,
-.editName {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+.editName { 
+	margin-top: 12px;
 }
+.editorTextPanel a {
+	padding: 20px 0 20px 0 !important;
+}
+
