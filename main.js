@@ -1,3 +1,81 @@
+// Функции для работы с localStorage
+function saveImagesToStorage() {
+	const mainCover = document.querySelector('.headbg img');
+	const mainAvatar = document.querySelector('.avatars img');
+
+	if (mainCover) localStorage.setItem('userCover', mainCover.src);
+	if (mainAvatar) localStorage.setItem('userAvatar', mainAvatar.src);
+
+	console.log('Изображения сохранены в localStorage');
+}
+
+function loadImagesFromStorage() {
+	const mainCover = document.querySelector('.headbg img');
+	const mainAvatar = document.querySelector('.avatars img');
+	const editCover = document.querySelector('.copyHeadbg img');
+	const editAvatar = document.querySelector('.copyAvatars img');
+
+	const savedCover = localStorage.getItem('userCover');
+	const savedAvatar = localStorage.getItem('userAvatar');
+
+	if (savedCover && mainCover) {
+		mainCover.src = savedCover;
+		if (editCover) editCover.src = savedCover;
+		console.log('Обложка загружена из localStorage');
+	}
+
+	if (savedAvatar && mainAvatar) {
+		mainAvatar.src = savedAvatar;
+		if (editAvatar) editAvatar.src = savedAvatar;
+		console.log('Аватарка загружена из localStorage');
+	}
+}
+
+// Функция сброса изменений в редакторе
+function resetEditorChanges() {
+	const mainCover = document.querySelector('.headbg img');
+	const mainAvatar = document.querySelector('.avatars img');
+	const editCover = document.querySelector('.copyHeadbg img');
+	const editAvatar = document.querySelector('.copyAvatars img');
+
+	// Возвращаем оригинальные изображения в редактор
+	if (mainCover && editCover) {
+		editCover.src = mainCover.src;
+	}
+	if (mainAvatar && editAvatar) {
+		editAvatar.src = mainAvatar.src;
+	}
+
+	console.log('Изменения в редакторе сброшены');
+}
+
+// Функция применения изменений (для кнопки ✅)
+function applyChanges() {
+	const mainCover = document.querySelector('.headbg img');
+	const mainAvatar = document.querySelector('.avatars img');
+	const editCover = document.querySelector('.copyHeadbg img');
+	const editAvatar = document.querySelector('.copyAvatars img');
+
+	// Копируем из редактора в основной профиль
+	if (editCover && mainCover) {
+		mainCover.src = editCover.src;
+	}
+	if (editAvatar && mainAvatar) {
+		mainAvatar.src = editAvatar.src;
+	}
+
+	// Сохраняем в localStorage
+	saveImagesToStorage();
+
+	console.log('Изменения применены и сохранены');
+	copyProfile.classList.remove('active');
+}
+
+// Загрузка сохраненных изображений при старте
+document.addEventListener('DOMContentLoaded', function () {
+	loadImagesFromStorage();
+});
+
 // бургер меню
 const burgerCont = document.querySelector('.burgerCont')
 const burgerMenu = document.querySelector('.burgerMenu')
@@ -17,8 +95,6 @@ document.addEventListener('click', function (event) {
 	}
 })
 
-
-
 // редактор профиля
 const copyProfile = document.querySelector('.copyProfile')
 const editBtn = document.querySelector('.editBtn')
@@ -28,16 +104,6 @@ editBtn.addEventListener("click", toggleProfile)
 function toggleProfile() {
 	copyProfile.classList.toggle("active")
 }
-
-const closeBtn = document.querySelector('.close-btn');
-
-document.addEventListener('click', function (event) {
-
-	if (event.target.closest('.close-btn')) {
-		copyProfile.classList.remove('active');
-	}
-})
-
 
 // выбор файла для обложки
 const coverInput = document.getElementById('coverInput')
@@ -58,10 +124,15 @@ coverInput.addEventListener('change', function (event) {
 	}
 })
 
-
 function processCoverImage(file) {
 	if (!file.type.startsWith('image/')) {
 		alert('Пожалуйста, выберите изображение')
+		return;
+	}
+
+	const maxSize = 5 * 1024 * 1024; // 5MB
+	if (file.size > maxSize) {
+		alert('Файл слишком большой. Максимум 5MB');
 		return;
 	}
 
@@ -83,8 +154,6 @@ if (coverLink) {
 	});
 }
 
-
-
 // выбор файла для аватарки
 const photoInput = document.getElementById('photoInput')
 const photoImage = document.querySelector('.copyAvatars img')
@@ -104,10 +173,15 @@ photoInput.addEventListener('change', function (event) {
 	}
 })
 
-
 function processAvatarImage(file) {
 	if (!file.type.startsWith('image/')) {
 		alert('Пожалуйста, выберите изображение')
+		return;
+	}
+
+	const maxSize = 5 * 1024 * 1024; // 5MB
+	if (file.size > maxSize) {
+		alert('Файл слишком большой. Максимум 5MB');
 		return;
 	}
 
@@ -128,3 +202,18 @@ if (photoLink) {
 		openPhotoPicker();
 	});
 }
+
+// Обработчик для кнопки сохранения ✅
+const saveBtn = document.querySelector('.save-btn');
+saveBtn.addEventListener('click', applyChanges);
+
+// Обработчик для кнопки закрытия
+const closeBtn = document.querySelector('.close-btn');
+
+document.addEventListener('click', function (event) {
+	if (event.target.closest('.close-btn')) {
+		resetEditorChanges();
+		copyProfile.classList.remove('active');
+		return;
+	}
+});
