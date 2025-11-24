@@ -29,6 +29,8 @@ function loadImagesFromStorage() {
 		if (editAvatar) editAvatar.src = savedAvatar;
 		console.log('Аватарка загружена из localStorage');
 	}
+
+
 }
 
 // Функция сброса изменений в редакторе
@@ -69,6 +71,7 @@ function applyChanges() {
 
 	console.log('Изменения применены и сохранены');
 	copyProfile.classList.remove('active');
+	blurtest.classList.remove('active')
 }
 
 // Загрузка сохраненных изображений при старте
@@ -101,9 +104,14 @@ const editBtn = document.querySelector('.editBtn')
 
 editBtn.addEventListener("click", toggleProfile)
 
+const blurtest = document.querySelector('.blurtest')
+
 function toggleProfile() {
 	copyProfile.classList.toggle("active")
+	blurtest.classList.toggle("active")
 }
+
+
 
 // выбор файла для обложки
 const coverInput = document.getElementById('coverInput')
@@ -214,6 +222,19 @@ document.addEventListener('click', function (event) {
 	if (event.target.closest('.close-btn')) {
 		resetEditorChanges();
 		copyProfile.classList.remove('active');
+		blurtest.classList.remove('active')
 		return;
 	}
 });
+
+
+
+
+
+
+
+
+
+
+
+
