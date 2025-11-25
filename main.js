@@ -30,6 +30,13 @@ function loadImagesFromStorage() {
 		console.log('Аватарка загружена из localStorage');
 	}
 
+	// Загрузка имени
+	const savedName = localStorage.getItem('userName');
+	if (savedName) {
+		userNickName.textContent = savedName;
+		copyUserNickName.textContent = savedName;
+		console.log('Имя загружено из localStorage');
+	}
 
 }
 
@@ -227,6 +234,56 @@ document.addEventListener('click', function (event) {
 	}
 });
 
+
+const userNickName = document.querySelector('.userNickName h3')
+const copyUserNickName = document.querySelector('.copyUserNickName h3')
+
+const createNick = document.querySelector('.createNick')
+const textNickName = document.querySelector('.textNickName')
+
+createNick.addEventListener('submit', function (event) {
+	event.preventDefault()
+	handleNameChange()
+})
+
+function handleNameChange() {
+	//получение значений из инпута
+	const newName = textNickName.value.trim()
+
+	//проверка данных
+	if (newName === '') {
+		alert('Введите имя')
+		textNickName.focus()
+		return
+	}
+
+	if (newName.length > 30) {
+		alert('Имя слишком длинное')
+		textNickName.focus()
+		return
+	}
+	//обновление имени
+	userNickName.textContent = newName
+	copyUserNickName.textContent = newName
+
+	//сохр в локал
+	localStorage.setItem('userName', newName)
+
+	//очистка поля ввода
+	textNickName.value = ''
+
+	console.log('имя изменено на:', newName)
+}
+
+
+
+
+
+
+
+
+
+// сделай крч что бы была анимация появления по клику изменить имя
 
 
 
