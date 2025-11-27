@@ -171,10 +171,6 @@ a {
     right: -13px;
     position: absolute;
 	padding-top: 7px;
-
-    /* background-color: rgb(27, 27, 27);
-    border: 1px solid rgba(255, 255, 255, 0.055);
-    border-radius: 5px; */
 	background: rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(15px);
 	-webkit-backdrop-filter: blur(15px);
@@ -495,10 +491,11 @@ transition:
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: rgb(40, 40, 40);
+    /* background: rgb(40, 40, 40); */
+	background-color: rgb(29, 29, 29);
     padding: 15px;
     margin-bottom: 15px;
-    /* Высота автоматически подстраивается под контент */
+	border: 1.5px solid rgba(255, 255, 255, 0.055);
 }
 
 .postHeader {
@@ -534,5 +531,10 @@ transition:
 	margin-top: 30px;
     line-height: 1.5;
 	color: white;
+}
+.postUserName h4 {
+	color: white;
+    font-size: 16px;
+	font-weight: 300;
 }
 

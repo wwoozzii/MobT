@@ -14,9 +14,11 @@ function loadImagesFromStorage() {
 	const mainAvatar = document.querySelector('.avatars img');
 	const editCover = document.querySelector('.copyHeadbg img');
 	const editAvatar = document.querySelector('.copyAvatars img');
+	const postUserAvatar = document.querySelector('.postUserAvatar img')
 
 	const savedCover = localStorage.getItem('userCover');
 	const savedAvatar = localStorage.getItem('userAvatar');
+
 
 	if (savedCover && mainCover) {
 		mainCover.src = savedCover;
@@ -27,6 +29,7 @@ function loadImagesFromStorage() {
 	if (savedAvatar && mainAvatar) {
 		mainAvatar.src = savedAvatar;
 		if (editAvatar) editAvatar.src = savedAvatar;
+		postUserAvatar.src = savedAvatar;
 		console.log('Аватарка загружена из localStorage');
 	}
 
@@ -35,8 +38,12 @@ function loadImagesFromStorage() {
 	if (savedName) {
 		userNickName.textContent = savedName;
 		copyUserNickName.textContent = savedName;
+		postUserName.textContent = savedName;
 		console.log('Имя загружено из localStorage');
 	}
+
+	//загрузка ника и аваатарки для постов
+
 
 }
 
@@ -64,6 +71,7 @@ function applyChanges() {
 	const mainAvatar = document.querySelector('.avatars img');
 	const editCover = document.querySelector('.copyHeadbg img');
 	const editAvatar = document.querySelector('.copyAvatars img');
+	const postUserAvatar = document.querySelector('.postUserAvatar img')
 
 	// Копируем из редактора в основной профиль
 	if (editCover && mainCover) {
@@ -71,6 +79,9 @@ function applyChanges() {
 	}
 	if (editAvatar && mainAvatar) {
 		mainAvatar.src = editAvatar.src;
+		if (postUserAvatar) {
+			postUserAvatar.src = editAvatar.src;
+		}
 	}
 
 	// Сохраняем в localStorage
@@ -204,6 +215,7 @@ function processAvatarImage(file) {
 
 	reader.onload = function (e) {
 		photoImage.src = e.target.result
+
 		console.log('Фото обновлено!')
 	}
 
@@ -240,6 +252,7 @@ const copyUserNickName = document.querySelector('.copyUserNickName h3')
 
 const createNick = document.querySelector('.createNick')
 const textNickName = document.querySelector('.textNickName')
+const postUserName = document.querySelector('.postUserName')
 
 createNick.addEventListener('submit', function (event) {
 	event.preventDefault()
@@ -265,6 +278,7 @@ function handleNameChange() {
 	//обновление имени
 	userNickName.textContent = newName
 	copyUserNickName.textContent = newName
+	postUserName.textContent = newName
 
 	//сохр в локал
 	localStorage.setItem('userName', newName)
